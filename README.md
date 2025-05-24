@@ -1,3 +1,6 @@
+## 🔗 Link del proyecto
+
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](http://44.213.131.209/)
 
 # Sistema de Gestión Escolar
 
@@ -71,9 +74,7 @@ Entre ellas estan:
 - Pruebas de Caja Negra - Validación de funcionalidades desde la perspectiva del usuario
 - Pruebas de Aceptación - Verificación de requisitos
 - Pruebas de Regresión - Garantía de que nuevos cambios no afecten funcionalidades existentes
-## 🔗 Link del proyecto
 
-[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](http://44.213.131.209/)
 ## Author
 
 - [@JhRA9](https://github.com/JhRA9)
