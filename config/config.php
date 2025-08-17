@@ -4,16 +4,18 @@ if (getenv('MYSQLHOST')) {
     define('SERVIDOR', getenv('MYSQLHOST'));
     define('USUARIO', getenv('MYSQLUSER'));
     define('PASSWORD', getenv('MYSQLPASSWORD'));
-    define('BD', getenv('MYSQLDATABASE') ?: 'sistemaescolar');
+    define('BD', getenv('MYSQLDATABASE') ?: 'sistemaescolar1');
     define('PUERTO', getenv('MYSQLPORT'));
-} else {
-    // Si estoy en local uso mis credenciales fijas
-    define('SERVIDOR', 'shuttle.proxy.rlwy.net');
+} 
+ else {
+    // Si estoy en local (XAMPP)
+    define('SERVIDOR', '127.0.0.1'); // o 'localhost'
     define('USUARIO', 'root');
-    define('PASSWORD', 'luheoEFwVaGiHuRQqOrBfPOIAbEVlSaf');
-    define('BD', 'sistemaescolar');
-    define('PUERTO', '22985');
+    define('PASSWORD', '');
+    define('BD', 'sistemaescolar1');
+    define('PUERTO', '3306'); // puerto por defecto de MySQL en XAMPP
 }
+
 
 // Defino el nombre de mi aplicacion
 define('APP_NAME', 'SISTEMA DE GESTION ESCOLAR');
