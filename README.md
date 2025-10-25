@@ -19,7 +19,7 @@ Administrador:
 
 Datos para logeo:
 
-admin@admin.com:123
+geralldb@outlook.com:1234
 
 Profesores:
 
@@ -74,12 +74,4 @@ Entre ellas estan:
 - Pruebas de Caja Negra - Validación de funcionalidades desde la perspectiva del usuario
 - Pruebas de Aceptación - Verificación de requisitos
 - Pruebas de Regresión - Garantía de que nuevos cambios no afecten funcionalidades existentes
-
-## Author
-
-- [@JhRA9](https://github.com/JhRA9)
-
-Este proyecto lo desarrollé como parte de mi aprendizaje en programación web y es uno de mis primeros proyectos serios. Reconozco que puede realizarse de una manera más óptima y más bonita, como: hay funcionalidades que podrían estar mejor implementadas, el código podría ser más limpio en algunas partes, y definitivamente necesita más pruebas y optimizaciones de seguridad.
-
-Aunque sé que hay muchas cosas por mejorar y optimizar, estoy contento con lo que he logrado hasta ahora. Cada funcionalidad que implementé fue un nuevo reto para mí. Me ayudó a crecer como desarrollador ya que cada línea de código representa un aprendizaje para mí, cada bug que solucioné me enseñó algo nuevo, y cada funcionalidad que logré completar me motivó a seguir mejorando.
 
