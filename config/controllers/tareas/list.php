@@ -117,6 +117,8 @@ class ContextTareas
 
 
 $order = $_GET['order'] ?? 'title';
+$format = $_GET['format'] ?? 'json';
+
 $strategyMap = [
     'title' => TareasByTitle::class,
     'description' => TareasByDescription::class,
@@ -126,10 +128,9 @@ $strategyMap = [
 ];
 
 $strategyClass = $strategyMap[$order] ?? TareasByTitle::class;
-$strategy = new $strategyClass();
-
-$context = new ContextTareas($strategy);
+$context = new ContextTareas(new $strategyClass());
 $tareas = $context->executeStrategy();
+
 $tareasMap = array_map(function ($tarea) {
     return [
         'id' => $tarea['id_tarea'],
@@ -142,6 +143,41 @@ $tareasMap = array_map(function ($tarea) {
         'hora_entrega' => $tarea['hora_entrega'],
     ];
 }, $tareas);
+
+// Exportación
+if ($format === 'pdf') {
+    $options = new Options();
+    $options->set('isRemoteEnabled', true);
+    $dompdf = new Dompdf($options);
+
+    $fechaGeneracion = date('d/m/Y H:i');
+    $html = '<h2 style="text-align:center;">Listado de Tareas</h2>';
+    $html .= '<table border="1" cellspacing="0" cellpadding="5" width="100%">';
+    $html .= '<thead><tr>
+                <th>ID</th><th>Título</th><th>Descripción</th>
+                <th>Estado</th><th>Materia</th>
+                <th>Fecha Entrega</th><th>Hora Entrega</th>
+              </tr></thead><tbody>';
+    foreach ($tareasMap as $t) {
+        $html .= "<tr>
+                    <td>{$t['id']}</td>
+                    <td>{$t['titulo']}</td>
+                    <td>{$t['descripcion']}</td>
+                    <td>{$t['estado']}</td>
+                    <td>{$t['materia']}</td>
+                    <td>{$t['fecha_entrega']}</td>
+                    <td>{$t['hora_entrega']}</td>
+                  </tr>";
+    }
+    $html .= '</tbody></table>';
+    $html .= "<p style='text-align:right; font-size:10px;'>Generado el $fechaGeneracion</p>";
+
+    $dompdf->loadHtml($html);
+    $dompdf->setPaper('A4', 'landscape');
+    $dompdf->render();
+    $dompdf->stream("tareas.pdf", ["Attachment" => true]);
+    exit;
+}
 
 header('Content-Type: application/json');
 echo json_encode(['data' => $tareasMap]);

@@ -26,6 +26,12 @@ include('../../config/controllers/tareas/index.php');
                             <button accesskey="1" class="btn btn-primary" id="btn-fecha">Ordenar por fecha</button>
                             <button accesskey="2" class="btn btn-primary" id="btn-estado">Ordenar por estado</button>
                             <button accesskey="3" class="btn btn-primary" id="btn-materia">Ordenar por materia</button>
+                            <a href="../../config/controllers/tareas/exportar_pdf.php" 
+                                class="btn btn-danger" 
+                                target="_blank">
+                                <i class="fas fa-file-pdf"></i> Exportar a PDF
+                            </a>
+
 
                             <table id="example1" class="table table-striped table-bordered">
                                 <thead>
