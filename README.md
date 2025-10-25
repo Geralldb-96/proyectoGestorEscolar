@@ -59,9 +59,7 @@ AWS  - Servidor de producción
 Railway - Hosting de base de datos MySQL
 
 Apache - Servidor web
-## Documentación
 
-[Documentation](https://drive.google.com/uc?export=download&id=1Bn0AEvYq4tEj8gWgi9dU-mO-UB_63tf2)
 
 
 ## Tests
